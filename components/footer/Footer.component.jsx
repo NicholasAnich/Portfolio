@@ -4,12 +4,17 @@ import styles from "./footer.module.scss";
 
 export default function Footer({ theme }) {
     const [isMounted, setIsMounted] = useState(false);
-    const testTheme = clsx(styles.footerContainer, styles[theme]);
+    const footer = clsx(styles.footerContainer, styles[theme]);
 
     useEffect(() => {
         setIsMounted(true);
     }, []);
 
     if (!isMounted) return null;
-    return <footer className={testTheme}>Footer</footer>;
+
+    return (
+        <footer className={footer}>
+            <div className={styles.body}>CONTENT</div>
+        </footer>
+    );
 }

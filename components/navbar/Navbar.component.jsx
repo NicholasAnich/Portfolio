@@ -32,7 +32,9 @@ export default function Navbar() {
 
     if (!isMounted) return null;
 
-    const containerTheme = clsx(styles.navContainer, styles[theme]);
+    const containerTheme = clsx(styles.container, styles[theme]);
+    // const containerTheme = clsx(styles.navContainer, styles[theme]);
+    const navContainer = clsx(styles.navContainer);
     const menuIcon = clsx(styles.hamburgerBtn, styles.menuIcon, {
         [styles.closeIcon]: isOpen,
         [styles.openIcon]: !isOpen,
@@ -41,62 +43,74 @@ export default function Navbar() {
     return (
         <>
             {/* <nav className={styles.navContainer}> */}
-            <nav className={containerTheme}>
-                <Link className={styles.logo} href={"/"}>
-                    <Image
-                        className={styles.logoImage}
-                        src="/codeFavicon.png"
-                        alt="this is the logo"
-                        width={30}
-                        height={30}
-                    />
-                </Link>
-                <button
-                    className={menuIcon}
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <Hamburger isOpen={isOpen} />
-                <ul className={styles.navList}>
-                    <li className={styles.navItem}>
-                        <Link href={"/"} className={styles.navLink}>
-                            Home
-                        </Link>
-                    </li>
-                    <li className={styles.navItem}>
-                        <Link
-                            href={"/portfolio"}
-                            className={styles.navLink}
-                        >
-                            Portfolio
-                        </Link>
-                    </li>
-                    <li className={styles.navItem}>
-                        <Link href={"/about"} className={styles.navLink}>
-                            About
-                        </Link>
-                    </li>
-                    <li className={styles.navItem}>
-                        <Link href={"/contact"} className={styles.navLink}>
-                            Contact Me
-                        </Link>
-                    </li>
-                </ul>
-                <button
-                    className={styles.changeThemeButton}
-                    onClick={toggleTheme}
-                >
-                    {theme === "light" ? (
-                        <FontAwesomeIcon icon={faMoon} />
-                    ) : (
-                        <FontAwesomeIcon icon={faSun} />
-                    )}
-                </button>
-            </nav>
+            <header className={containerTheme}>
+                {/* <nav className={containerTheme}> */}
+                <nav className={navContainer}>
+                    <Link className={styles.logo} href={"/"}>
+                        <Image
+                            className={styles.logoImage}
+                            src="/codeFavicon.png"
+                            alt="this is the logo"
+                            width={30}
+                            height={30}
+                        />
+                    </Link>
+                    <button
+                        className={menuIcon}
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <Hamburger isOpen={isOpen} />
+                    <ul className={styles.navList}>
+                        <li className={styles.navItem}>
+                            <Link href={"/"} className={styles.navLink}>
+                                Home
+                            </Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link
+                                href={"/portfolio"}
+                                className={styles.navLink}
+                            >
+                                Portfolio
+                            </Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link
+                                href={"/about"}
+                                className={styles.navLink}
+                            >
+                                About
+                            </Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link
+                                href={"/contact"}
+                                className={styles.navLink}
+                            >
+                                Contact Me
+                            </Link>
+                        </li>
+                    </ul>
+                    <button
+                        className={styles.changeThemeButton}
+                        onClick={toggleTheme}
+                        style={{
+                            padding: "0.5em",
+                        }}
+                    >
+                        {theme === "light" ? (
+                            <FontAwesomeIcon icon={faMoon} />
+                        ) : (
+                            <FontAwesomeIcon icon={faSun} />
+                        )}
+                    </button>
+                </nav>
+            </header>
         </>
     );
 }

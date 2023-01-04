@@ -1,11 +1,12 @@
 .hamburgerMenu {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    // background-color: black;
+    background-color: orangered;
     position: absolute;
     top: 100%;
-    // left: 50%;
-    width: 100%;
+    // right: 1px;
+    min-width: 100%;
     justify-content: center;
     align-items: center;
 

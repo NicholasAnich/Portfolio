@@ -1,9 +1,24 @@
+.container {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: minmax(30px, 1fr) minmax(300px, 1111px) minmax(
+            30px,
+            1fr
+        );
+
+    min-height: 100px;
+}
 // NAVIGATION CONTAINER
 .navContainer {
+    grid-column: 2;
+
     display: flex;
     align-items: center;
+
     position: relative;
-    padding: 1em;
+    padding-block: 1em;
 }
 
 // THEMES
@@ -19,9 +34,6 @@
 
 // HAMBURGER MENU
 .hamburgerBtn {
-    // display: flex;
-    // flex-direction: column;
-    // gap: 5px;
     border: none;
     background-color: transparent;
     padding: 0;
@@ -81,6 +93,7 @@
 
 // NAVIGATION LIST
 .navList {
+    grid-column: 2 / 3;
     display: flex;
     display: none;
     @media (min-width: 700px) {
@@ -98,6 +111,7 @@
 }
 
 .changeThemeButton {
+    min-width: 34px;
     border: none;
     background: none;
     cursor: pointer;
