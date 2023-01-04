@@ -1,0 +1,23 @@
+.hamburgerMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    // left: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 700px) {
+        display: none;
+    }
+}
+
+.isOpen {
+    background-color: white;
+}
+.isClosed {
+    display: none;
+    background-color: black;
+}

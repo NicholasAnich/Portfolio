@@ -15,13 +15,17 @@ export async function getStaticProps() {
 export default function Portfolio({ portfolioData }) {
     const [projects, setProjects] = useState(portfolioData);
 
-    const projectList = projects.data.map((detail) => (
-        <Project
-            key={detail.id}
-            img={detail.attributes.img.data.attributes}
-            title={detail.attributes.name}
-            id={detail.id}
-        />
-    ));
+    const projectList = projects.data.map((detail) => {
+        const languages = detail?.attributes?.toolsUsed?.languages;
+        return (
+            <Project
+                key={detail.id}
+                img={detail.attributes.img.data.attributes}
+                title={detail.attributes.name}
+                languages={languages}
+                id={detail.id}
+            />
+        );
+    });
     return <div className={styles.grid}>{projectList}</div>;
 }

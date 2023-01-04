@@ -3,6 +3,7 @@
 /***************/
 /* Andy Bell's CSS Reset */
 /* Remove default margin */
+
 *,
 *::before,
 *::after {
@@ -87,4 +88,13 @@ h6 {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+/* COLOR THEMES */
+[data-theme="dark"] {
+    background-color: blue;
+}
+
+[data-theme="light"] {
+    background-color: orange;
 }
