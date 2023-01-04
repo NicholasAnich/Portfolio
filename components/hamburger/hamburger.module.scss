@@ -1,21 +1,33 @@
 .hamburgerMenu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     position: absolute;
     top: 100%;
+    // left: -30px;
+    right: -30px;
 
-    min-width: 100%;
-    min-height: 200px;
+    max-width: 100%;
+    min-height: 100vh;
 
     background-color: orangered;
-    transition: transform 0.3s ease-in-out, opacity 0.5s;
+    // transition: transform 0.3s ease-in-out, opacity 0.5s;
 
     @media (min-width: 700px) {
         display: none;
     }
+}
+.isOpen {
+    transform: translateX(0%);
+    max-width: 100%;
+}
+
+.isClosed {
+    display: none;
+    // transform: translateX(100%);
+    // opacity: 0;
 }
 
 .light {
@@ -24,18 +36,6 @@
 
 .dark {
     background-color: black;
-}
-
-.isOpen {
-    // background-color: white;
-    transform: translateX(0%);
-    // opacity: 1;
-}
-
-.isClosed {
-    transform: translateX(150%);
-    opacity: 0;
-    // background-color: white;
 }
 
 .navList {

@@ -64,7 +64,7 @@ export default function Navbar() {
                         <span></span>
                         <span></span>
                     </button>
-                    <Hamburger isOpen={isOpen} />
+                    <Hamburger isOpen={isOpen} toggleMenu={toggleMenu} />
                     <ul className={styles.navList}>
                         <li className={styles.navItem}>
                             <Link href={"/"} className={styles.navLink}>

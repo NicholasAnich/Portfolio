@@ -3,9 +3,8 @@ import styles from "./portfolio.module.scss";
 import Project from "../../components/projects/Project.component";
 
 export async function getStaticProps() {
-    const results = await fetch(
-        "http://127.0.0.1:1337/api/projects?populate=*"
-    );
+    const API = "http://127.0.0.1:1337/api";
+    const results = await fetch(`${API}/projects?populate=*`);
     const portfolioData = await results.json();
     return {
         props: { portfolioData },
