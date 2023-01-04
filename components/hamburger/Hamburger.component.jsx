@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import styles from "./hamburger.module.scss";
 import clsx from "clsx";
 
 export default function Hamburger({ isOpen }) {
-    const hamburger = clsx(styles.hamburgerMenu, {
-        [styles.isOpen]: isOpen,
-        [styles.isClosed]: !isOpen,
-    });
+    const { theme } = useTheme();
+    const hamburger = clsx(
+        styles.hamburgerMenu,
+        {
+            [styles.isOpen]: isOpen,
+            [styles.isClosed]: !isOpen,
+        },
+        styles[theme]
+    );
 
     return (
         <div className={hamburger}>
