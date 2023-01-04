@@ -29,8 +29,8 @@ export default function Hamburger({ isOpen }) {
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <Link href={"/about"} className={styles.navLink}>
-                        About
+                    <Link href={"/blog"} className={styles.navLink}>
+                        Blog
                     </Link>
                 </li>
                 <li className={styles.navItem}>

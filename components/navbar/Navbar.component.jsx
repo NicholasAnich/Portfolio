@@ -81,10 +81,10 @@ export default function Navbar() {
                         </li>
                         <li className={styles.navItem}>
                             <Link
-                                href={"/about"}
+                                href={"/blog"}
                                 className={styles.navLink}
                             >
-                                About
+                                Blog
                             </Link>
                         </li>
                         <li className={styles.navItem}>
@@ -103,14 +103,21 @@ export default function Navbar() {
                             padding: "0.5em",
                         }}
                     >
-                        {theme === "light" ? (
-                            <FontAwesomeIcon icon={faMoon} />
-                        ) : (
-                            <FontAwesomeIcon icon={faSun} />
-                        )}
+                        <FontAwesomeIcon
+                            icon={theme === "light" ? faMoon : faSun}
+                            size={"xl"}
+                        />
                     </button>
                 </nav>
             </header>
         </>
     );
+}
+
+{
+    /* {theme === "light" ? (
+    <FontAwesomeIcon icon={faMoon} size={"xl"}/>
+) : (
+    <FontAwesomeIcon icon={faSun} size={"xl"} />
+)} */
 }
