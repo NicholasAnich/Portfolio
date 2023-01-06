@@ -1,72 +1,60 @@
 .grid {
-    display: grid;
-    max-width: 500px;
-    margin-block: 50px;
-    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: grid;
+  max-width: 500px;
+  margin-block: 50px;
+
+  border: 3px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
 }
+
+.projectDetailContainer {
+  position: relative;
+}
+
+.image {
+  opacity: 0.3;
+  //   filter: brightness(0.5);
+  filter: blur(1px);
+}
+.content {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: grid;
+  padding: 1em;
+  //   background-color: hsl(240, 100%, 27%, 0.2);
+  //   background-color: hsl(164deg, 109%, 34%, 0.2)
+
+  background-image: linear-gradient(
+    180deg,
+    rgb(31, 7, 74, 0.2),
+    rgba(42, 245, 152, 0.2)
+  );
+
+  //   mix-blend-mode: hard-light;
+}
+// .mobileImage {
+//   height: 359px;
+//   filter: opacity(0.5);
+// }
 
 .projectTitle {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 0.75;
-    margin-bottom: 0.5em;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 0.75;
+  margin-bottom: 0.5em;
 }
 
-.languageList {
-    margin-top: 0.5em;
-    display: flex;
+.projectDescription {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
 }
 
-.languageItem {
-    // text-align: center;
-    margin-right: 5px;
-    // text-transform: capitalize;
-    border: 1px solid white;
-    background-color: white;
-    padding: 1px 0.5em;
-    border-radius: 5px;
-    pointer-events: none;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 30px;
-    width: 30px;
-}
-
-.js {
-    // background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png?20120221235433");
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png?20210407134359");
-}
-
-.ts {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png");
-}
-
-.next\.js {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/207px-Nextjs-logo.svg.png?20190307203525");
-    padding: 0em 2em;
-}
-.html {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png?20170517184425");
-}
-
-.css {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/363px-CSS3_logo_and_wordmark.svg.png?20160530175649");
-}
-.scss {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/512px-Sass_Logo_Color.svg.png?20150315202757");
-}
-
-.modules {
-    background-image: url("https://raw.githubusercontent.com/css-modules/logos/master/css-modules-logo.png");
-}
-
-.api {
-    // background-image: url("https://e7.pngegg.com/pngimages/482/922/png-clipart-application-programming-interface-logo-computer-programming-api-icon-text-logo.png");
-    background-image: url("https://mpng.subpng.com/20180805/lbf/kisspng-application-programming-interface-computer-icons-r-%D8%A8%D9%87%D9%85%D9%86-%DB%B1%DB%B3%DB%B9%DB%B6-%D9%86%D9%88%D8%B1%D8%A8%D8%B1%D8%AA-%D8%AA%DB%8C%D9%85-%D9%86%D9%88%D8%B1%D8%A8%D8%B1-5b675e652c2f65.425644441533501029181.jpg");
-}
-
-.vite {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/410px-Vitejs-logo.svg.png?20220412224743");
+.iconContainer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
 }

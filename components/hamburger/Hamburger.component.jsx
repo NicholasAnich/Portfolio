@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./hamburger.module.scss";
 import clsx from "clsx";
 
-export default function Hamburger({ isOpen }) {
+export default function Hamburger({ isOpen, toggleMenu }) {
     const { theme } = useTheme();
     const hamburger = clsx(
         styles.hamburgerMenu,
@@ -19,22 +19,38 @@ export default function Hamburger({ isOpen }) {
         <div className={hamburger}>
             <ul className={styles.navList}>
                 <li className={styles.navItem}>
-                    <Link href={"/"} className={styles.navLink}>
+                    <Link
+                        href={"/"}
+                        className={styles.navLink}
+                        onClick={toggleMenu}
+                    >
                         Home
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <Link href={"/portfolio"} className={styles.navLink}>
+                    <Link
+                        href={"/portfolio"}
+                        className={styles.navLink}
+                        onClick={toggleMenu}
+                    >
                         Portfolio
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <Link href={"/blog"} className={styles.navLink}>
+                    <Link
+                        href={"/blog"}
+                        className={styles.navLink}
+                        onClick={toggleMenu}
+                    >
                         Blog
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <Link href={"/contact"} className={styles.navLink}>
+                    <Link
+                        href={"/contact"}
+                        className={styles.navLink}
+                        onClick={toggleMenu}
+                    >
                         Contact Me
                     </Link>
                 </li>
