@@ -7,10 +7,10 @@ import Link from 'next/link';
 export default function ProjectLinks({ gitLink, liveLink }) {
   return (
     <div className={styles.container}>
-      <Link href='#' className={styles.link}>
+      <Link href={gitLink} target='_blank' className={styles.link}>
         <FontAwesomeIcon icon={faGithub} className={styles.faIcon} size='xl' />
       </Link>
-      <Link href='#' className={styles.link}>
+      <Link href={liveLink} target='_blank' className={styles.link}>
         <FontAwesomeIcon
           icon={faArrowUpRightFromSquare}
           className={styles.faIcon}

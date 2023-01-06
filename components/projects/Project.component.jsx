@@ -4,27 +4,32 @@ import styles from './projects.module.scss';
 import LanguageList from '../languageList/LanguageList.component';
 import ProjectLinks from '../projectLinks/ProjectLinks.component';
 
-export default function Project({ img, title, id, languages, description }) {
+export default function Project({
+  img,
+  title,
+  id,
+  languages,
+  description,
+  gitLink,
+  liveLink,
+}) {
   const cloudinaryImage = img.url;
 
   return (
     <div className={styles.grid}>
-      <div>
-        <h1 className={styles.projectTitle}>{title}</h1>
-      </div>
       {/* <Link as={`/portfolio/${id}`} href='/portfolio/[id]'> */}
       {/* <div
         role='img'
         className={styles.mobileImage}
         aria-labelledby={`${title}-${id}`}
         style={{
-          backgroundImage: `url(${cloudinaryImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+            backgroundImage: `url(${cloudinaryImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
         }}
-      >
-      </div> */}
+        >
+    </div> */}
       <div className={styles.projectDetailContainer}>
         <CldImage
           className={styles.image}
@@ -37,11 +42,14 @@ export default function Project({ img, title, id, languages, description }) {
           sizes='(min-width: 600px) 100vw, 50vw'
         />
         <div className={styles.content}>
+          <div>
+            <h1 className={styles.projectTitle}>{title}</h1>
+          </div>
           <p className={styles.projectDescription}>{description}</p>
 
           <div className={styles.iconContainer}>
             <LanguageList languages={languages} />
-            <ProjectLinks />
+            <ProjectLinks gitLink={gitLink} liveLink={liveLink} />
           </div>
         </div>
       </div>

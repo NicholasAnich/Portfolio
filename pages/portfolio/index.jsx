@@ -17,6 +17,7 @@ export default function Portfolio({ portfolioData }) {
   const projectList = projects.data.map((detail) => {
     const languages = detail?.attributes?.toolsUsed?.languages;
     const description = detail?.attributes?.description;
+
     return (
       <Project
         key={detail.id}
@@ -24,6 +25,8 @@ export default function Portfolio({ portfolioData }) {
         title={detail.attributes.name}
         languages={languages}
         description={description}
+        gitLink={detail.attributes.gitHubURL}
+        liveLink={detail.attributes.liveSiteURL}
         id={detail.id}
       />
     );

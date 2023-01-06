@@ -2,7 +2,10 @@
   display: grid;
   max-width: 500px;
   margin-block: 50px;
-  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  border: 3px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .projectDetailContainer {
@@ -10,34 +13,43 @@
 }
 
 .image {
-  //   width: 100%;
-  //   background-size: 'cover';
-  //   background-position: 'center';
-  //   background-repeat: 'no-repeat';
-  opacity: 0.5;
+  opacity: 0.3;
+  //   filter: brightness(0.5);
+  filter: blur(1px);
 }
 .content {
   height: 100%;
   position: absolute;
   top: 0;
   display: grid;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-content: end;
-}
-.projectDescription {
-}
+  padding: 1em;
+  //   background-color: hsl(240, 100%, 27%, 0.2);
+  //   background-color: hsl(164deg, 109%, 34%, 0.2)
 
-.mobileImage {
-  height: 359px;
-  filter: opacity(0.5);
+  background-image: linear-gradient(
+    180deg,
+    rgb(31, 7, 74, 0.2),
+    rgba(42, 245, 152, 0.2)
+  );
+
+  //   mix-blend-mode: hard-light;
 }
+// .mobileImage {
+//   height: 359px;
+//   filter: opacity(0.5);
+// }
 
 .projectTitle {
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 700;
   line-height: 0.75;
+  margin-bottom: 0.5em;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  line-height: 1.5;
   margin-bottom: 0.5em;
 }
 
