@@ -1,4 +1,5 @@
 import { CldImage } from 'next-cloudinary';
+import LanguageList from '../../components/languageList/LanguageList.component';
 import styles from './preview.module.scss';
 
 export async function getStaticProps({ params }) {
@@ -41,6 +42,11 @@ export default function Project({
   date,
   // previews,
 }) {
+  const projectDate = new Date(date);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = projectDate.toLocaleDateString('en-US', options);
+
+  console.log(formattedDate);
   return (
     <div>
       <CldImage
@@ -51,8 +57,15 @@ export default function Project({
         alt={altText}
       />
       <h1>{name}</h1>
+      <time dateTime={date}>{formattedDate}</time>
+      <LanguageList languages={languages} />
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
+        accusamus temporibus fugiat, saepe consequatur necessitatibus enim
+        nostrum distinctio nemo vero reiciendis dolorum voluptate aliquam quasi
+        omnis non facilis quod, quam esse quisquam. Quo atque accusantium eos
+        hic autem, molestias consectetur?
+      </p>
     </div>
   );
 }
-
-// https://res.cloudinary.com/dsfpnlxqn/image/upload/c_fill,g_auto,h_250,w_970/b_rgb:000000,e_gradient_fade,y_-0.50/c_scale,co_rgb:ffffff,fl_relative,l_text:montserrat_25_style_light_align_center:Shop%20Now,w_0.5,y_0.18/v1672523617/project_Tablet_b8dc6c8aad.png

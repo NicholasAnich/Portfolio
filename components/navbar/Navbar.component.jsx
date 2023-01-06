@@ -8,10 +8,9 @@ import Image from 'next/image';
 import { clsx } from 'clsx';
 import { useTheme } from 'next-themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './navbar.module.scss';
-
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
   const [isMounted, setIsMounted] = useState(false);
