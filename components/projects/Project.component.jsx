@@ -20,6 +20,7 @@ export default function Project({
   const cloudinaryImage = img.url;
   const containerTheme = clsx(styles.projectDetailContainer, styles[theme]);
   const gridTheme = clsx(styles.grid, styles[theme]);
+  const isEven = id % 2 === 0;
 
   useEffect(() => {
     setIsMounted(true);
@@ -46,7 +47,11 @@ export default function Project({
 
           <div className={styles.iconContainer}>
             <LanguageList languages={languages} />
-            <ProjectLinks gitLink={gitLink} liveLink={liveLink} />
+            <ProjectLinks
+              gitLink={gitLink}
+              liveLink={liveLink}
+              isEven={isEven}
+            />
           </div>
         </div>
       </div>

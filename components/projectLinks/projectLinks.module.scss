@@ -1,9 +1,11 @@
 .container {
+  width: 100%;
   display: flex;
-  gap: 0.5em;
+  gap: 1em;
 
   @media (min-width: 670px) {
     align-self: end;
+    justify-content: end;
   }
 }
 
@@ -17,4 +19,15 @@
 .link {
   text-decoration: none;
   color: white;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
+.isEven {
+  @media (min-width: 670px) {
+    justify-content: start;
+    // border: 1px solid blue;
+  }
 }

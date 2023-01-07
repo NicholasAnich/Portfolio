@@ -8,7 +8,7 @@ config.autoAddCss = false;
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme='dark'>
       <Layout>
         <Component {...pageProps} />
       </Layout>
