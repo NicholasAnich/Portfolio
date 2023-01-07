@@ -19,6 +19,7 @@ export default function Project({
   const { theme } = useTheme();
   const cloudinaryImage = img.url;
   const containerTheme = clsx(styles.projectDetailContainer, styles[theme]);
+  const gridTheme = clsx(styles.grid, styles[theme]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -27,7 +28,7 @@ export default function Project({
   if (!isMounted) return null;
 
   return (
-    <div className={styles.grid}>
+    <div className={gridTheme}>
       <div className={containerTheme}>
         <CldImage
           className={styles.image}

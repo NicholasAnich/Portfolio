@@ -4,11 +4,7 @@
   max-width: 500px;
   min-width: fit-content;
   min-height: auto;
-  margin-block: 50px;
 
-  border: 3px solid transparent;
-  border-radius: 10px;
-  //   overflow: hidden;
   @media (min-width: 768px) {
     max-width: 100%;
   }
@@ -16,31 +12,19 @@
 
 .projectDetailContainer {
   position: relative;
+  overflow: hidden;
+  border-radius: 5px;
 
   @media (min-width: 768px) {
     position: initial;
+    border: none;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 10px;
   }
 }
 
-.light {
-  .projectDescription {
-    &::before {
-      background: linear-gradient(
-        90deg,
-        hsla(221, 32%, 65%, 1) 0%,
-        hsla(235, 32%, 92%, 1) 100%
-      );
-    }
-  }
-}
-
 .image {
-  opacity: 0.3;
-  filter: blur(2px);
-
   @media (min-width: 768px) {
     filter: blur(0px);
     opacity: 1;
@@ -49,11 +33,9 @@
   }
 }
 .content {
-  height: 100%;
-  position: absolute;
   top: 0;
   display: grid;
-  padding: 1em;
+  padding: 2em 1em;
   background-color: hsl(240, 100%, 27%, 0.2);
 
   @media (min-width: 768px) {
@@ -74,26 +56,32 @@
 
 .projectTitle {
   font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
+  text-transform: capitalize;
+  font-weight: 600;
   line-height: 0.75;
   margin-bottom: 0.5em;
 
   @media (min-width: 670px) {
+    margin-bottom: 1.5em;
     grid-column: 4 / -1;
     grid-row: 1;
+  }
+
+  @media (min-width: 1000px) {
+    text-align: end;
   }
 }
 
 .projectDescription {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   line-height: 1.5;
-  margin-bottom: 0.5em;
+  margin-block: 2em;
 
   @media (min-width: 670px) {
     position: relative;
     font-size: 1.2rem;
     border-radius: 10px;
+    margin-block: 0;
 
     grid-column: 1 / -1;
     grid-row: 2;
@@ -104,9 +92,6 @@
       position: absolute;
       content: '';
       display: block;
-      background-color: hsl(211, 100%, 27%, 0.5);
-
-      background: hsla(211, 73%, 20%, 1);
 
       background: linear-gradient(
         90deg,
@@ -127,14 +112,100 @@
 
 .iconContainer {
   display: flex;
-  align-items: end;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+  gap: 1em;
 
   @media (min-width: 670px) {
-    align-self: start;
-    flex-direction: column;
-    gap: 1em;
+    align-self: end;
+    justify-self: end;
     grid-row: 3;
     grid-column: 5 / -1;
+  }
+}
+
+// THEME SPECIFICS
+
+.light {
+  .projectDescription {
+    &::before {
+      background: linear-gradient(
+        90deg,
+        hsla(221, 32%, 65%, 1) 0%,
+        hsla(235, 32%, 92%, 1) 100%
+      );
+    }
+  }
+}
+
+.dark {
+  .projectDescription {
+    color: #f0f8ff;
+  }
+}
+
+.light:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #c3cadf;
+  margin-block: 50px;
+}
+
+.dark:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #20b5ce;
+  margin-block: 50px;
+  opacity: 0.8;
+}
+
+.grid:nth-child(even) {
+  .projectDetailContainer {
+    .image {
+      grid-column: 7 / -1;
+      grid-row: 1 / -1;
+    }
+
+    .content {
+      grid-column: 1 / 9;
+    }
+
+    .projectTitle {
+      text-align: left;
+      grid-column: 1 / 5;
+    }
+
+    .projectDescription {
+      &::before {
+        background: linear-gradient(
+          265deg,
+          hsla(211, 73%, 20%, 1) 0%,
+          hsla(211, 73%, 20%, 1) 11%,
+          hsla(215, 18%, 13%, 1) 100%
+        );
+      }
+    }
+
+    .iconContainer {
+      grid-column: 1;
+    }
+  }
+}
+
+.light:nth-child(even) {
+  .projectDetailContainer {
+    .projectDescription {
+      &::before {
+        background: linear-gradient(
+          265deg,
+          hsla(221, 32%, 65%, 1) 0%,
+          hsla(235, 32%, 92%, 1) 100%
+        );
+      }
+    }
   }
 }

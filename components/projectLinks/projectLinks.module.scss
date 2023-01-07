@@ -1,6 +1,17 @@
 .container {
   display: flex;
   gap: 0.5em;
+
+  @media (min-width: 670px) {
+    align-self: end;
+  }
+}
+
+.light {
+  .link {
+    color: inherit;
+    color: #264076;
+  }
 }
 
 .link {
