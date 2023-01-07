@@ -148,10 +148,15 @@
   margin-left: 1em;
 }
 
-// .sunIcon {
-
-// }
+.sunIcon {
+  &:hover {
+    color: #8b9dc3;
+  }
+}
 
 .moonIcon {
   color: #484b6a;
+  &:hover {
+    color: #25253e;
+  }
 }

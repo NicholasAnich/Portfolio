@@ -43,6 +43,7 @@ html {
 body {
   text-rendering: optimizeSpeed;
   line-height: var(--lh-body);
+  font-family: 'Montserrat', serif;
 }
 
 /* A elements that don't have a class get default styles */
@@ -73,6 +74,15 @@ h6 {
   overflow-wrap: break-word;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -93,8 +103,12 @@ h6 {
 /* COLOR THEMES */
 [data-theme='dark'] {
   background-color: #1c2128;
+  color: #3ed3d3;
+  font-weight: 300;
 }
 
 [data-theme='light'] {
   background-color: #e4e5f1;
+  color: #25253e;
+  font-weight: 400;
 }
