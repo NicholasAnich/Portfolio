@@ -25,6 +25,10 @@ ol {
   list-style: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;

@@ -80,13 +80,18 @@
   @media (min-width: 670px) {
     position: relative;
     font-size: 1.2rem;
-    border-radius: 10px;
-    margin-block: 0;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
 
     grid-column: 1 / -1;
     grid-row: 2;
 
+    margin-block: 0;
     padding: 40px;
+
+    border-radius: 10px;
 
     &::before {
       position: absolute;
@@ -125,7 +130,6 @@
 }
 
 // THEME SPECIFICS
-
 .light {
   .projectDescription {
     &::before {

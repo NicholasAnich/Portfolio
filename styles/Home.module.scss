@@ -1,0 +1,123 @@
+.main {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+
+  @media (min-width: 1000px) {
+    padding-inline: 10em;
+  }
+}
+
+.dark {
+  .introContainer {
+    .btnLink {
+      border-color: teal;
+    }
+  }
+}
+
+.introContainer {
+  width: 100%;
+  margin-top: 10em;
+  margin-bottom: 25em;
+
+  .introduction {
+    font-size: 15px;
+    letter-spacing: 1.3px;
+    margin-bottom: 0.7em;
+  }
+
+  .author {
+    font-size: clamp(40px, 8vw, 60px);
+    font-weight: 700;
+  }
+
+  .snippet {
+    font-size: clamp(30px, 8vw, 60px);
+    font-weight: 700;
+    opacity: 0.8;
+    letter-spacing: -2px;
+  }
+  .whatIdo {
+    font-size: clamp(14px, 4vw, 20px);
+    opacity: 0.8;
+    margin-bottom: 2em;
+  }
+
+  .btnLink {
+    text-decoration: none;
+    border: 1px solid black;
+    color: inherit;
+    background-color: inherit;
+    padding: 1em 2em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.aboutMeContainer {
+  display: grid;
+  justify-items: center;
+  //   max-width: 400px;
+
+  .aboutMeTitle {
+    font-size: 24px;
+    text-transform: capitalize;
+  }
+
+  .imageContainer {
+    position: relative;
+    margin-block: 1em;
+
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: -7%;
+      right: -7%;
+      border: 3px solid teal;
+      height: 100%;
+      width: 100%;
+      z-index: -1000;
+    }
+  }
+
+  .body {
+    margin-block: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    // text-align: center;
+  }
+  .paragraph {
+    line-height: 1.6;
+  }
+
+  @media (min-width: 700px) {
+    // max-width: 700px;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+
+    .aboutMeTitle {
+      font-size: 32px;
+      justify-self: start;
+    }
+
+    .imageContainer {
+      grid-row: 2;
+      grid-column: 2;
+      align-self: start;
+      margin: 0;
+    }
+
+    .body {
+      grid-row: 2;
+    }
+  }
+}
