@@ -1,15 +1,40 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
+import { gsap } from 'gsap';
+import Introduction from '../components/introduction/Introduction.component';
 
 export default function Home() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const comp = useRef();
+  let containerRef = useRef();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.from(containerRef.children, {
+        lazy: false,
+        stagger: {
+          each: 0.4,
+        },
+        x: -360,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.5,
+      });
+    }, comp);
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
 
   if (!mounted) return null;
 
@@ -22,8 +47,13 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <div className={`${styles.test} ${styles[theme]}`}>
-        <div className={styles.introContainer}>
-          {/* <img className={styles.portal} src='/portal.png' alt='portal ring' /> */}
+        <Introduction />
+        {/* <div
+          className={styles.introContainer}
+          ref={(element) => {
+            containerRef = element;
+          }}
+        >
           <h1 className={styles.introduction}>Hey, my name is </h1>
           <h2 className={styles.author}>Nicholas Anich</h2>
           <h3 className={styles.snippet}>
@@ -32,13 +62,11 @@ export default function Home() {
           <p className={styles.whatIdo}>
             I'm a software engineer specializing in Front-End Developement.
           </p>
-          {/* <button className={styles.btn}>
-            <a href='#about'>About Me</a>
-          </button> */}
+
           <Link className={styles.btnLink} href='#about' scroll={false}>
             About Me
           </Link>
-        </div>
+        </div> */}
         <div id='about' className={styles.aboutMeContainer}>
           <h3 className={styles.aboutMeTitle}>About me</h3>
           <div className={styles.imageContainer}>

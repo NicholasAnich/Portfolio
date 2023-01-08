@@ -27,7 +27,7 @@
 
 .isEven {
   @media (min-width: 670px) {
-    justify-content: start;
+    justify-content: flex-start;
     // border: 1px solid blue;
   }
 }
