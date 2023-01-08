@@ -20,14 +20,14 @@ export default function Portfolio({ portfolioData }) {
 
     return (
       <Project
-        key={detail.id}
-        img={detail.attributes.img.data.attributes}
-        title={detail.attributes.name}
+        key={detail?.id}
+        img={detail?.attributes?.img?.data?.attributes}
+        title={detail?.attributes?.name}
         languages={languages}
         description={description}
-        gitLink={detail.attributes.gitHubURL}
-        liveLink={detail.attributes.liveSiteURL}
-        id={detail.id}
+        gitLink={detail?.attributes?.gitHubURL}
+        liveLink={detail?.attributes?.liveSiteURL}
+        id={detail?.id}
       />
     );
   });

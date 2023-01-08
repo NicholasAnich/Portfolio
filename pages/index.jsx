@@ -48,25 +48,6 @@ export default function Home() {
       </Head>
       <div className={`${styles.test} ${styles[theme]}`}>
         <Introduction />
-        {/* <div
-          className={styles.introContainer}
-          ref={(element) => {
-            containerRef = element;
-          }}
-        >
-          <h1 className={styles.introduction}>Hey, my name is </h1>
-          <h2 className={styles.author}>Nicholas Anich</h2>
-          <h3 className={styles.snippet}>
-            I like to build visually cool websites
-          </h3>
-          <p className={styles.whatIdo}>
-            I'm a software engineer specializing in Front-End Developement.
-          </p>
-
-          <Link className={styles.btnLink} href='#about' scroll={false}>
-            About Me
-          </Link>
-        </div> */}
         <div id='about' className={styles.aboutMeContainer}>
           <h3 className={styles.aboutMeTitle}>About me</h3>
           <div className={styles.imageContainer}>

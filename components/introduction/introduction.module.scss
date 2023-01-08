@@ -52,3 +52,12 @@
     color: white;
   }
 }
+.dark {
+  .btnLink {
+    border-color: teal;
+    &:hover {
+      background-color: teal;
+      color: white;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect, useEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import styles from './introduction.module.scss';
 import { gsap } from 'gsap';
@@ -11,7 +11,7 @@ export default function Introduction() {
   const comp = useRef();
   let containerRef = useRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from(containerRef.children, {
         lazy: false,
