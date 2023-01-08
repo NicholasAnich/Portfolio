@@ -1,14 +1,43 @@
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import clsx from 'clsx';
 import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
+import { gsap } from 'gsap';
+import Introduction from '../components/introduction/Introduction.component';
 
 export default function Home() {
   const { theme } = useTheme();
-  const container = clsx(styles.main, styles[theme]);
-  const test = clsx(styles.main, styles[theme]);
+  const [mounted, setMounted] = useState(false);
+  const comp = useRef();
+  let containerRef = useRef();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.from(containerRef.children, {
+        lazy: false,
+        stagger: {
+          each: 0.4,
+        },
+        x: -360,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.5,
+      });
+    }, comp);
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <>
       <Head>
@@ -17,23 +46,8 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className={styles.test}>
-        <div className={styles.introContainer}>
-          <h1 className={styles.introduction}>Hey, my name is </h1>
-          <h2 className={styles.author}>Nicholas Anich</h2>
-          <h3 className={styles.snippet}>
-            I like to build visually cool websites
-          </h3>
-          <p className={styles.whatIdo}>
-            I'm a software engineer specializing in Front-End Developement.
-          </p>
-          {/* <button className={styles.btn}>
-            <a href='#about'>About Me</a>
-          </button> */}
-          <Link className={styles.btnLink} href='#about' scroll={false}>
-            About Me
-          </Link>
-        </div>
+      <div className={`${styles.test} ${styles[theme]}`}>
+        <Introduction />
         <div id='about' className={styles.aboutMeContainer}>
           <h3 className={styles.aboutMeTitle}>About me</h3>
           <div className={styles.imageContainer}>
@@ -64,15 +78,74 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.toolContainer}>
+          <h3 className={styles.toolTitle}>Tools</h3>
           <ul className={styles.toolList}>
-            <li className={styles.toolItem}>HTML</li>
-            <li className={styles.toolItem}>Sass</li>
-            <li className={styles.toolItem}>React</li>
-            <li className={styles.toolItem}>Next.js</li>
-            <li className={styles.toolItem}>Node.js</li>
-            <li className={styles.toolItem}>Express</li>
-            <li className={styles.toolItem}>Tailwind</li>
+            <li className={styles.toolItem}>
+              <img
+                src='/htmlLogo.png'
+                alt='html logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/cssLogo.png'
+                alt='cascading style sheets logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/jsLogo.png'
+                alt='javascript logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/reactLogo.png'
+                alt='react logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/sassLogo.png'
+                alt='sass logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/nodeLogo.png'
+                alt='nodejs logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/expressLogo.png'
+                alt='nodejs express logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
           </ul>
+        </div>
+
+        <div className={styles.linkContainer}>
+          <Link href='/contact' className={styles.btnLink}>
+            Contact Me
+          </Link>
+          <Link href='/portfolio' className={styles.btnLink}>
+            Projects
+          </Link>
         </div>
       </div>
     </>

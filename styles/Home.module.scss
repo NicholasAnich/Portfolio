@@ -11,51 +11,10 @@
 }
 
 .dark {
-  .introContainer {
-    .btnLink {
-      border-color: teal;
-    }
-  }
-}
-
-.introContainer {
-  width: 100%;
-  margin-top: 10em;
-  margin-bottom: 25em;
-
-  .introduction {
-    font-size: 15px;
-    letter-spacing: 1.3px;
-    margin-bottom: 0.7em;
-  }
-
-  .author {
-    font-size: clamp(40px, 8vw, 60px);
-    font-weight: 700;
-  }
-
-  .snippet {
-    font-size: clamp(30px, 8vw, 60px);
-    font-weight: 700;
-    opacity: 0.8;
-    letter-spacing: -2px;
-  }
-  .whatIdo {
-    font-size: clamp(14px, 4vw, 20px);
-    opacity: 0.8;
-    margin-bottom: 2em;
-  }
-
   .btnLink {
-    text-decoration: none;
-    border: 1px solid black;
-    color: inherit;
-    background-color: inherit;
-    padding: 1em 2em;
-    cursor: pointer;
-
+    border-color: teal;
     &:hover {
-      background-color: black;
+      background-color: teal;
       color: white;
     }
   }
@@ -64,7 +23,8 @@
 .aboutMeContainer {
   display: grid;
   justify-items: center;
-  //   max-width: 400px;
+  margin-bottom: 10em;
+  position: relative;
 
   .aboutMeTitle {
     font-size: 24px;
@@ -120,4 +80,43 @@
       grid-row: 2;
     }
   }
+}
+
+.toolContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10em;
+  //   justify-content: center;
+  align-items: center;
+
+  .toolTitle {
+    font-size: 24px;
+    text-transform: capitalize;
+    margin-bottom: 1em;
+  }
+
+  .toolList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  @media (min-width: 900px) {
+    .toolTitle {
+      font-size: 32px;
+      width: 100%;
+    }
+    .toolList {
+      gap: 5em;
+    }
+  }
+}
+
+.linkContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 10em;
 }
