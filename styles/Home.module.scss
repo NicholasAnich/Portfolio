@@ -11,9 +11,11 @@
 }
 
 .dark {
-  .introContainer {
-    .btnLink {
-      border-color: teal;
+  .btnLink {
+    border-color: teal;
+    &:hover {
+      background-color: teal;
+      color: white;
     }
   }
 }
@@ -22,6 +24,17 @@
   width: 100%;
   margin-top: 10em;
   margin-bottom: 25em;
+  position: relative;
+
+  .portal {
+    position: absolute;
+    width: 700px;
+    left: 0;
+    top: -50%;
+    bottom: -50%;
+    z-index: -1000;
+    opacity: 0.5;
+  }
 
   .introduction {
     font-size: 15px;
@@ -32,6 +45,7 @@
   .author {
     font-size: clamp(40px, 8vw, 60px);
     font-weight: 700;
+    // margin-bottom: 0.5em;
   }
 
   .snippet {
@@ -39,32 +53,33 @@
     font-weight: 700;
     opacity: 0.8;
     letter-spacing: -2px;
+    margin-bottom: 0.5em;
   }
   .whatIdo {
     font-size: clamp(14px, 4vw, 20px);
     opacity: 0.8;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
   }
+}
+.btnLink {
+  text-decoration: none;
+  border: 1px solid black;
+  color: inherit;
+  background-color: inherit;
+  padding: 1em 2em;
+  cursor: pointer;
 
-  .btnLink {
-    text-decoration: none;
-    border: 1px solid black;
-    color: inherit;
-    background-color: inherit;
-    padding: 1em 2em;
-    cursor: pointer;
-
-    &:hover {
-      background-color: black;
-      color: white;
-    }
+  &:hover {
+    background-color: black;
+    color: white;
   }
 }
 
 .aboutMeContainer {
   display: grid;
   justify-items: center;
-  //   max-width: 400px;
+  margin-bottom: 10em;
+  position: relative;
 
   .aboutMeTitle {
     font-size: 24px;
@@ -120,4 +135,44 @@
       grid-row: 2;
     }
   }
+}
+
+.toolContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10em;
+  //   justify-content: center;
+  align-items: center;
+
+  .toolTitle {
+    font-size: 24px;
+    text-transform: capitalize;
+    margin-bottom: 1em;
+  }
+
+  .toolList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: start;
+    gap: 10px;
+  }
+
+  @media (min-width: 900px) {
+    .toolTitle {
+      font-size: 32px;
+      width: 100%;
+    }
+    .toolList {
+      //   justify-content: start;
+      gap: 5em;
+    }
+  }
+}
+
+.linkContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 10em;
 }

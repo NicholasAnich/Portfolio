@@ -1,14 +1,18 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import clsx from 'clsx';
 import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
   const { theme } = useTheme();
-  const container = clsx(styles.main, styles[theme]);
-  const test = clsx(styles.main, styles[theme]);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
   return (
     <>
       <Head>
@@ -17,8 +21,9 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className={styles.test}>
+      <div className={`${styles.test} ${styles[theme]}`}>
         <div className={styles.introContainer}>
+          {/* <img className={styles.portal} src='/portal.png' alt='portal ring' /> */}
           <h1 className={styles.introduction}>Hey, my name is </h1>
           <h2 className={styles.author}>Nicholas Anich</h2>
           <h3 className={styles.snippet}>
@@ -64,15 +69,74 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.toolContainer}>
+          <h3 className={styles.toolTitle}>Tools</h3>
           <ul className={styles.toolList}>
-            <li className={styles.toolItem}>HTML</li>
-            <li className={styles.toolItem}>Sass</li>
-            <li className={styles.toolItem}>React</li>
-            <li className={styles.toolItem}>Next.js</li>
-            <li className={styles.toolItem}>Node.js</li>
-            <li className={styles.toolItem}>Express</li>
-            <li className={styles.toolItem}>Tailwind</li>
+            <li className={styles.toolItem}>
+              <img
+                src='/htmlLogo.png'
+                alt='html logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/cssLogo.png'
+                alt='cascading style sheets logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/jsLogo.png'
+                alt='javascript logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/reactLogo.png'
+                alt='react logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/sassLogo.png'
+                alt='sass logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/nodeLogo.png'
+                alt='nodejs logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
+            <li className={styles.toolItem}>
+              <img
+                src='/expressLogo.png'
+                alt='nodejs express logo'
+                height={50}
+                width={50}
+              ></img>
+            </li>
           </ul>
+        </div>
+
+        <div className={styles.linkContainer}>
+          <Link href='/contact' className={styles.btnLink}>
+            Contact Me
+          </Link>
+          <Link href='/portfolio' className={styles.btnLink}>
+            Projects
+          </Link>
         </div>
       </div>
     </>
