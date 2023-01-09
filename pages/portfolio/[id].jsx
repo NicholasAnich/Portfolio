@@ -7,7 +7,8 @@ export async function getStaticProps({ params }) {
   const projectId = params.id;
 
   const results = await fetch(
-    `${process.env.API_BASE_URL}/projects/${projectId}?populate=*`
+    `${process.env.API_BASE_URL}/projects/${projectId}?populate=*` ||
+      `${process.env.PRODUCTION_BASE_URL}/projects/${projectId}?populate=*`
   );
   const previews = await results.json();
 
