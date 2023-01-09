@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../styles/portfolio.module.scss';
+import styles from '../../styles/portfolio.module.scss';
 import Project from '../../components/projects/Project.component';
 
 export async function getStaticProps() {
