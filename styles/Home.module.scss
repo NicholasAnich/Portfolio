@@ -10,9 +10,21 @@
   }
 }
 
+.btnLink {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 1em 2em;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
 .dark {
   .btnLink {
     border-color: teal;
+    color: inherit;
     &:hover {
       background-color: teal;
       color: white;

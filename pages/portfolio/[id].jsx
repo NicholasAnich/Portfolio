@@ -3,10 +3,12 @@ import LanguageList from '../../components/languageList/LanguageList.component';
 import styles from './preview.module.scss';
 
 export async function getStaticProps({ params }) {
-  const API = 'http://127.0.0.1:1337/api';
+  // const API = 'http://127.0.0.1:1337/api';
   const projectId = params.id;
 
-  const results = await fetch(`${API}/projects/${projectId}?populate=*`);
+  const results = await fetch(
+    `${process.env.API_BASE_URL}/projects/${projectId}?populate=*`
+  );
   const previews = await results.json();
 
   const image = await previews.data.attributes.img.data.attributes.url;
@@ -22,8 +24,10 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const API = 'http://127.0.0.1:1337/api';
-  const results = await fetch(`${API}/projects?populate=*`);
+  // const API = 'http://127.0.0.1:1337/api';
+  const results = await fetch(
+    process.env.DEV_API_URL || process.env.PRODUCTION_URL
+  );
   const previews = await results.json();
   return {
     paths:
