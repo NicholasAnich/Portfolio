@@ -17,7 +17,7 @@ export default function Home() {
     setMounted(true);
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from(containerRef.children, {
         lazy: false,
