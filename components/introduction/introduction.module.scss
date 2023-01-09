@@ -1,0 +1,64 @@
+.introContainer {
+  width: 100%;
+  margin-top: 10em;
+  margin-bottom: 25em;
+  position: relative;
+
+  .portal {
+    position: absolute;
+    width: 700px;
+    left: 0;
+    top: -50%;
+    bottom: -50%;
+    z-index: -1000;
+    opacity: 0.5;
+  }
+
+  .introduction {
+    font-size: 15px;
+    letter-spacing: 1.3px;
+    margin-bottom: 0.7em;
+  }
+
+  .author {
+    font-size: clamp(40px, 8vw, 60px);
+    font-weight: 700;
+    // margin-bottom: 0.5em;
+  }
+
+  .snippet {
+    font-size: clamp(30px, 8vw, 60px);
+    font-weight: 700;
+    opacity: 0.8;
+    letter-spacing: -2px;
+    margin-bottom: 0.5em;
+  }
+  .whatIdo {
+    font-size: clamp(14px, 4vw, 20px);
+    opacity: 0.8;
+    margin-bottom: 3em;
+  }
+}
+.btnLink {
+  text-decoration: none;
+  border: 1px solid black;
+  color: inherit;
+  background-color: inherit;
+  padding: 1em 2em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.dark {
+  .btnLink {
+    border-color: teal;
+    &:hover {
+      background-color: teal;
+      color: white;
+    }
+  }
+}

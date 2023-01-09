@@ -1,0 +1,134 @@
+.main {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+
+  @media (min-width: 1000px) {
+    padding-inline: 10em;
+  }
+}
+
+.btnLink {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 1em 2em;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.dark {
+  .btnLink {
+    border-color: teal;
+    color: inherit;
+    &:hover {
+      background-color: teal;
+      color: white;
+    }
+  }
+}
+
+.aboutMeContainer {
+  display: grid;
+  justify-items: center;
+  margin-bottom: 10em;
+  position: relative;
+
+  .aboutMeTitle {
+    font-size: 24px;
+    text-transform: capitalize;
+  }
+
+  .imageContainer {
+    position: relative;
+    margin-block: 1em;
+
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: -7%;
+      right: -7%;
+      border: 3px solid teal;
+      height: 100%;
+      width: 100%;
+      z-index: -1000;
+    }
+  }
+
+  .body {
+    margin-block: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    // text-align: center;
+  }
+  .paragraph {
+    line-height: 1.6;
+  }
+
+  @media (min-width: 700px) {
+    // max-width: 700px;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+
+    .aboutMeTitle {
+      font-size: 32px;
+      justify-self: start;
+    }
+
+    .imageContainer {
+      grid-row: 2;
+      grid-column: 2;
+      align-self: start;
+      margin: 0;
+    }
+
+    .body {
+      grid-row: 2;
+    }
+  }
+}
+
+.toolContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10em;
+  //   justify-content: center;
+  align-items: center;
+
+  .toolTitle {
+    font-size: 24px;
+    text-transform: capitalize;
+    margin-bottom: 1em;
+  }
+
+  .toolList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  @media (min-width: 900px) {
+    .toolTitle {
+      font-size: 32px;
+      width: 100%;
+    }
+    .toolList {
+      gap: 5em;
+    }
+  }
+}
+
+.linkContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 10em;
+}
