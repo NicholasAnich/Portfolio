@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import clsx from 'clsx';
 import Popup from '../../components/popup/Popup.component';
-import styles from './contact.module.scss';
+import styles from '../styles/contact.module.scss';
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {

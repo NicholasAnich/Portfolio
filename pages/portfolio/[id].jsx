@@ -1,6 +1,6 @@
 import { CldImage } from 'next-cloudinary';
 import LanguageList from '../../components/languageList/LanguageList.component';
-import styles from './preview.module.scss';
+import styles from '../styles/preview.module.scss';
 
 export async function getStaticProps({ params }) {
   // const API = 'http://127.0.0.1:1337/api';
