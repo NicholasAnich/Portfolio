@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Head from 'next/head';
 import styles from '../../styles/portfolio.module.scss';
 import Project from '../../components/projects/Project.component';
 
@@ -20,16 +21,21 @@ export default function Portfolio({ portfolioData }) {
     const description = detail?.attributes?.description;
 
     return (
-      <Project
-        key={detail?.id}
-        img={detail?.attributes?.img?.data?.attributes}
-        title={detail?.attributes?.name}
-        languages={languages}
-        description={description}
-        gitLink={detail?.attributes?.gitHubURL}
-        liveLink={detail?.attributes?.liveSiteURL}
-        id={detail?.id}
-      />
+      <>
+        <Head>
+          <title>Portfolio</title>
+        </Head>
+        <Project
+          key={detail?.id}
+          img={detail?.attributes?.img?.data?.attributes}
+          title={detail?.attributes?.name}
+          languages={languages}
+          description={description}
+          gitLink={detail?.attributes?.gitHubURL}
+          liveLink={detail?.attributes?.liveSiteURL}
+          id={detail?.id}
+        />
+      </>
     );
   });
   return <div className={styles.grid}>{projectList}</div>;

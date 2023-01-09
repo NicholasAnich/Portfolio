@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import Head from 'next/head';
 import { useTheme } from 'next-themes';
 import clsx from 'clsx';
 import Popup from '../../components/popup/Popup.component';
@@ -50,7 +51,9 @@ export default function Contact() {
 
   return (
     <div className={contact}>
-      {/* <input type='button' value='Click to Open Popup' onClick={togglePopup} /> */}
+      <Head>
+        <title>Contact</title>
+      </Head>
       <p className={styles.contactMe}>
         Let me know how I can help or just say Hi!
       </p>
