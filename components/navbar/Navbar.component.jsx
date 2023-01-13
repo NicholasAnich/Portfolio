@@ -66,22 +66,26 @@ export default function Navbar() {
           <Hamburger isOpen={isOpen} toggleMenu={toggleMenu} />
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link href={'#about'} className={styles.navLink}>
+              <Link href={'#about'} className={styles.navLink} scroll={false}>
                 About
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href={'#experience'} className={styles.navLink}>
-                Experience
+              <Link href={'#tools'} className={styles.navLink} scroll={false}>
+                Tools
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href={'#projects'} className={styles.navLink}>
+              <Link
+                href={'#projects'}
+                className={styles.navLink}
+                scroll={false}
+              >
                 Projects
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href={'#contact'} className={styles.navLink}>
+              <Link href={'#contact'} className={styles.navLink} scroll={false}>
                 Contact Me
               </Link>
             </li>

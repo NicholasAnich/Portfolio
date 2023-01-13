@@ -32,7 +32,7 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className={styles.toolContainer}>
+      <div id='tools' className={styles.toolContainer}>
         <h3 className={styles.toolTitle}>Tools</h3>
         <ul className={styles.toolList}>
           <li className={styles.toolItem}>

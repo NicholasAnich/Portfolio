@@ -19,7 +19,7 @@ export default function Portfolio() {
     const description = detail?.attributes?.description;
 
     return (
-      <div id='projects' key={detail?.id}>
+      <div key={detail?.id}>
         <Project
           key={detail?.id}
           img={detail?.attributes?.img?.data?.attributes}
@@ -35,7 +35,7 @@ export default function Portfolio() {
   });
 
   return (
-    <div>
+    <div id='projects'>
       <h3 className={styles.title}>Projects</h3>
       <div className={styles.grid}>{projectList}</div>
     </div>

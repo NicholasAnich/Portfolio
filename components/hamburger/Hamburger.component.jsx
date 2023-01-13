@@ -19,7 +19,12 @@ export default function Hamburger({ isOpen, toggleMenu }) {
     <div className={hamburger}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <Link href={'#about'} className={styles.navLink} onClick={toggleMenu}>
+          <Link
+            href={'#about'}
+            className={styles.navLink}
+            onClick={toggleMenu}
+            scroll={false}
+          >
             About
           </Link>
         </li>
@@ -28,6 +33,7 @@ export default function Hamburger({ isOpen, toggleMenu }) {
             href={'#experience'}
             className={styles.navLink}
             onClick={toggleMenu}
+            scroll={false}
           >
             Tools
           </Link>
@@ -37,6 +43,7 @@ export default function Hamburger({ isOpen, toggleMenu }) {
             href={'#projects'}
             className={styles.navLink}
             onClick={toggleMenu}
+            scroll={false}
           >
             Projects
           </Link>
@@ -46,6 +53,7 @@ export default function Hamburger({ isOpen, toggleMenu }) {
             href={'#contact'}
             className={styles.navLink}
             onClick={toggleMenu}
+            scroll={false}
           >
             Contact Me
           </Link>

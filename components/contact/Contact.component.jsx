@@ -50,9 +50,7 @@ export default function Contact() {
 
   return (
     <div id='contact' className={contact}>
-      <p className={styles.contactMe}>
-        Let me know how I can help or just say Hi!
-      </p>
+      <p className={styles.contactMe}>Contact Me</p>
       <form className={styles.form} ref={form} onSubmit={sendEmail}>
         <label className={styles.label} htmlFor='name'>
           Name
