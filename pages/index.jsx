@@ -10,21 +10,11 @@ import { useTheme } from 'next-themes';
 import About from '../components/about/About.component';
 import Introduction from '../components/introduction/Introduction.component';
 import Portfolio from '../components/portfolio/Portfolio.component';
+import Contact from '../components/contact/Contact.component';
 
 //STYLES
 import { gsap } from 'gsap';
 import styles from '../styles/Home.module.scss';
-
-// GET STATIC PROPS
-// export async function getStaticProps() {
-//   const results = await fetch(
-//     process.env.DEV_API_URL || process.env.PRODUCTION_URL
-//   );
-//   const portfolioData = await results.json();
-//   return {
-//     props: { portfolioData },
-//   };
-// }
 
 export default function Home() {
   const { theme } = useTheme();
@@ -69,18 +59,8 @@ export default function Home() {
         <Introduction />
         <About />
         <Portfolio />
+        <Contact />
       </div>
     </>
   );
-}
-
-{
-  /* <div className={styles.linkContainer}>
-  <Link href='/contact' className={styles.btnLink}>
-    Contact Me
-  </Link>
-  <Link href='/portfolio' className={styles.btnLink}>
-    Projects
-  </Link>
-</div> */
 }
