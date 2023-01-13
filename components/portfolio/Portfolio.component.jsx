@@ -8,7 +8,10 @@ export default function Portfolio() {
 
   useEffect(() => {
     axios
-      .get(process.env.NEXT_PUBLIC_DEV_API_URL || process.env.PRODUCTION_URL)
+      .get(
+        process.env.NEXT_PUBLIC_DEV_API_URL ||
+          process.env.NEXT_PUBLIC_PRODUCTION_URL
+      )
       .then((res) => {
         setProjects(res.data);
       });
