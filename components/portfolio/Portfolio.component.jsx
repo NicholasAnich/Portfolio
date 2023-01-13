@@ -1,27 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Head from 'next/head';
-import styles from '../../styles/portfolio.module.scss';
-import Project from '../../components/projects/Project.component';
+import styles from './portfolio.module.scss';
+import Project from '../projects/Project.component';
 
-export async function getStaticProps() {
-  const results = await fetch(
-    process.env.DEV_API_URL || process.env.PRODUCTION_URL
-  );
-  const portfolioData = await results.json();
-  return {
-    props: { portfolioData },
-  };
-}
+export default function Portfolio() {
+  const [projects, setProjects] = useState('');
 
-export default function Portfolio({ portfolioData }) {
-  const [projects, setProjects] = useState(portfolioData);
+  useEffect(() => {
+    axios
+      .get(process.env.NEXT_PUBLIC_DEV_API_URL || process.env.PRODUCTION_URL)
+      .then((res) => {
+        setProjects(res.data);
+      });
+  }, []);
 
-  const projectList = projects.data.map((detail) => {
+  const projectList = projects?.data?.map((detail, i) => {
     const languages = detail?.attributes?.toolsUsed?.languages;
     const description = detail?.attributes?.description;
 
     return (
-      <>
+      <div key={detail?.id}>
         <Head>
           <title>Portfolio</title>
         </Head>
@@ -35,8 +34,9 @@ export default function Portfolio({ portfolioData }) {
           liveLink={detail?.attributes?.liveSiteURL}
           id={detail?.id}
         />
-      </>
+      </div>
     );
   });
+
   return <div className={styles.grid}>{projectList}</div>;
 }

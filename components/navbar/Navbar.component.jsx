@@ -70,8 +70,8 @@ export default function Navbar() {
           <Hamburger isOpen={isOpen} toggleMenu={toggleMenu} />
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link href={'/'} className={styles.navLink}>
-                Home
+              <Link href={'#about'} className={styles.navLink}>
+                About
               </Link>
             </li>
             <li className={styles.navItem}>
@@ -90,7 +90,7 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
-          <button
+          {/* <button
             className={styles.changeThemeButton}
             onClick={toggleTheme}
             aria-label={`Change Theme ${theme}`}
@@ -103,7 +103,8 @@ export default function Navbar() {
               icon={theme === 'light' ? faMoon : faSun}
               size={'xl'}
             />
-          </button>
+          </button> */}
+          <button>Resume</button>
         </nav>
       </header>
     </>
