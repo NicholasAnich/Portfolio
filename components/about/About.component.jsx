@@ -4,7 +4,7 @@ export default function About() {
   return (
     <>
       <div id='about' className={styles.aboutMeContainer}>
-        <h3 className={styles.aboutMeTitle}>About me</h3>
+        <h3 className={styles.aboutMeTitle}>About</h3>
         <div className={styles.imageContainer}>
           <Image
             className={styles.image}
@@ -28,7 +28,7 @@ export default function About() {
             {' '}
             When I'm not coding, you can find me exploring the great outdoors,
             whether it's going for a hike, run, or bike ride. I invite you to
-            take a look at my work."
+            take a look at my work.
           </p>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Head from 'next/head';
 import styles from './portfolio.module.scss';
 import Project from '../projects/Project.component';
 
@@ -21,9 +20,6 @@ export default function Portfolio() {
 
     return (
       <div id='projects' key={detail?.id}>
-        <Head>
-          <title>Portfolio</title>
-        </Head>
         <Project
           key={detail?.id}
           img={detail?.attributes?.img?.data?.attributes}
@@ -38,5 +34,10 @@ export default function Portfolio() {
     );
   });
 
-  return <div className={styles.grid}>{projectList}</div>;
+  return (
+    <div>
+      <h3 className={styles.title}>Projects</h3>
+      <div className={styles.grid}>{projectList}</div>
+    </div>
+  );
 }

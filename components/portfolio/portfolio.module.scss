@@ -1,7 +1,12 @@
+.title {
+  font-size: 32px;
+  margin-bottom: 1em;
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   align-items: end;
   justify-items: center;
-  margin-block: 10rem;
+  margin-bottom: 20em;
+  gap: 7rem;
 }

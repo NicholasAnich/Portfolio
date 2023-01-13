@@ -1,8 +1,7 @@
 //REACT / NEXT
-import { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
+
 // THEME
 import { useTheme } from 'next-themes';
 
