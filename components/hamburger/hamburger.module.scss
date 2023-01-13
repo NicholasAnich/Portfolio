@@ -57,5 +57,23 @@
 .navLink {
   padding: 1em;
   text-decoration: none;
-  //   color: inherit;
+  color: white;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+}
+
+.navBtn {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.7em 1.5em;
+  border: 1px solid teal;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: hsla(180, 100%, 25%, 0.2);
+  }
 }

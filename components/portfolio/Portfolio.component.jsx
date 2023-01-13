@@ -20,7 +20,7 @@ export default function Portfolio() {
     const description = detail?.attributes?.description;
 
     return (
-      <div key={detail?.id}>
+      <div id='projects' key={detail?.id}>
         <Head>
           <title>Portfolio</title>
         </Head>

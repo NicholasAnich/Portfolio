@@ -25,25 +25,38 @@ export default function Hamburger({ isOpen, toggleMenu }) {
         </li>
         <li className={styles.navItem}>
           <Link
-            href={'/portfolio'}
+            href={'#experience'}
             className={styles.navLink}
             onClick={toggleMenu}
           >
-            Portfolio
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href={'/blog'} className={styles.navLink} onClick={toggleMenu}>
-            Blog
+            Tools
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link
-            href={'/contact'}
+            href={'#projects'}
+            className={styles.navLink}
+            onClick={toggleMenu}
+          >
+            Projects
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link
+            href={'#contact'}
             className={styles.navLink}
             onClick={toggleMenu}
           >
             Contact Me
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link
+            className={styles.navBtn}
+            href='/resume/Nicholas Anich.pdf'
+            target='_blank'
+          >
+            Resume
           </Link>
         </li>
       </ul>

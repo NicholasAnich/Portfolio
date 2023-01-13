@@ -7,8 +7,6 @@ import Image from 'next/image';
 
 import { clsx } from 'clsx';
 import { useTheme } from 'next-themes';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './navbar.module.scss';
 
@@ -45,9 +43,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* <nav className={styles.navContainer}> */}
       <header className={containerTheme}>
-        {/* <nav className={containerTheme}> */}
         <nav className={navContainer}>
           <Link className={styles.logo} href={'/'}>
             <Image
@@ -75,36 +71,30 @@ export default function Navbar() {
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href={'/portfolio'} className={styles.navLink}>
-                Portfolio
+              <Link href={'#experience'} className={styles.navLink}>
+                Experience
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href={'/blog'} className={styles.navLink}>
-                Blog
+              <Link href={'#projects'} className={styles.navLink}>
+                Projects
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href={'/contact'} className={styles.navLink}>
+              <Link href={'#contact'} className={styles.navLink}>
                 Contact Me
               </Link>
             </li>
+            <li className={styles.navItem}>
+              <Link
+                href='/resume/Nicholas Anich.pdf'
+                target='_blank'
+                className={styles.navBtn}
+              >
+                Resume
+              </Link>
+            </li>
           </ul>
-          {/* <button
-            className={styles.changeThemeButton}
-            onClick={toggleTheme}
-            aria-label={`Change Theme ${theme}`}
-            style={{
-              padding: '0.5em',
-            }}
-          >
-            <FontAwesomeIcon
-              className={themeIcon}
-              icon={theme === 'light' ? faMoon : faSun}
-              size={'xl'}
-            />
-          </button> */}
-          <button>Resume</button>
         </nav>
       </header>
     </>

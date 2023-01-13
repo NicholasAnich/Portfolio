@@ -140,23 +140,15 @@
   }
 }
 
-.changeThemeButton {
-  min-width: 40px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  margin-left: 1em;
-}
+.navBtn {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.7em 1.5em;
+  border: 1px solid teal;
 
-.sunIcon {
-  &:hover {
-    color: #8b9dc3;
-  }
-}
-
-.moonIcon {
-  color: #484b6a;
-  &:hover {
-    color: #25253e;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: hsla(180, 100%, 25%, 0.2);
   }
 }
