@@ -26,9 +26,8 @@ export default function About() {
           </p>
           <p className={styles.paragraph}>
             {' '}
-            When I'm not coding, you can find me exploring the great outdoors,
-            whether it's going for a hike, run, or bike ride. I invite you to
-            take a look at my work.
+            When I'm not coding, you can find me exploring the city, playing
+            video games or working on another project.
           </p>
         </div>
       </div>
