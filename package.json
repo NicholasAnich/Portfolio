@@ -16,6 +16,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/font": "13.1.1",
+    "@splinetool/react-spline": "^2.2.5",
+    "@splinetool/runtime": "^0.9.186",
     "axios": "^1.2.2",
     "clsx": "^1.2.1",
     "eslint": "8.31.0",

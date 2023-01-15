@@ -4,6 +4,7 @@ import styles from './introduction.module.scss';
 import { gsap } from 'gsap';
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
+import Blobs from '../splineAsset/Blobs.component';
 
 export default function Introduction() {
   const { theme } = useTheme();
@@ -44,6 +45,9 @@ export default function Introduction() {
         I'm a software engineer specializing in Front-End Developement.
       </p>
 
+      <div className={styles.blobs}>
+        <Blobs />
+      </div>
       <Link className={styles.btnLink} href='#about' scroll={false}>
         About Me
       </Link>
