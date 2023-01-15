@@ -107,7 +107,8 @@ h6 {
 
 /* COLOR THEMES */
 [data-theme='dark'] {
-  background-color: #1c2128;
+  /* background-color: #1c2128; */
+  background-color: #0f1029;
   color: #3ed3d3;
   font-weight: 300;
 }
