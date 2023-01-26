@@ -30,7 +30,7 @@ export default function Hamburger({ isOpen, toggleMenu }) {
         </li>
         <li className={styles.navItem}>
           <Link
-            href={'#experience'}
+            href={'#tools'}
             className={styles.navLink}
             onClick={toggleMenu}
             scroll={false}
