@@ -91,7 +91,7 @@ export default function Navbar() {
             </li>
             <li className={styles.navItem}>
               <Link
-                href='/resume/Nicholas Anich.pdf'
+                href='/resume/Resume.pdf'
                 target='_blank'
                 className={styles.navBtn}
               >

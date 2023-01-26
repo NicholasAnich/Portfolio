@@ -44,8 +44,8 @@ export default function Introduction() {
       <p className={styles.whatIdo}>
         I'm a software engineer specializing in Front-End Developement.
       </p>
-
-      {/* <div className={styles.blobs}>
+      {/* 
+      <div className={styles.blobs}>
         <Blobs />
       </div> */}
       <Link className={styles.btnLink} href='#about' scroll={false}>
